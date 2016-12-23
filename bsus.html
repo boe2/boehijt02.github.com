@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Battle Spot Usage Stats</title>
+	<meta charset="utf-8">
+	<link href="css/bsus.css" rel="stylesheet">
+</head>
+<body>
+	<div id="header"><h2 id="headertext">Battle Spot Usage Stats</h2></div>
+	<div id="info">
+		<div id="selectandbutton"><p>Select format:</p><select id="select">
+			<option disabled value="#">
+				Season 1 - Not available yet!
+			</option>
+			<option disabled value="#">
+				Competitions
+			</option>
+			<option value="competition4102" selected="selected">
+				Battle of Alola
+			</option>
+		</select> <button onclick="resetData(0)" type="button">Show stats!</button></div><br>
+	</div>
+	<div id="left">
+	<div id="leftcontent">
+		<div id="pokemonbyranking">
+			Pokemon by ranking
+		</div>
+		<div id="border">
+		</div>
+		</div>
+	</div>
+	<div id="right">
+	<div id="rightcontent">
+		<div id="tabs">
+		<button type="button" onclick="setTab(0)">Items</button> |
+		<button type="button" onclick="setTab(1)">Moves</button> |
+		<button type="button" onclick="setTab(2)">Abilties</button> |
+		<button type="button" onclick="setTab(3)">Natures</button>	 |	
+		<button type="button" onclick="setTab(4)">Moves when victorious</button>	 |	
+		<button type="button" onclick="setTab(5)">Opponents when victorious</button> |
+		<button type="button" onclick="setTab(6)">Moves when defeated</button> |
+		<button type="button" onclick="setTab(7)">Opponents when defeated</button> |
+		<button type="button" onclick="setTab(8)">Teammates</button>
+		</div>
+		<div id="monsinfo">
+		<p id="monsinfo2">info</p>	
+		<p id="tabname" ><span id="tabnamespan">Items</span></p>		
+		<p id="noitems"></p>
+		</div>
+		 <table id="table">
+		 <tr>
+			<td id="td1">#1</td>
+			<td id="td2">-</td> 
+			<td id="td3">-</td>
+		  </tr>
+		  <tr>
+			<td id="td4">#2</td>
+			<td id="td5">-</td>
+			<td id="td6">-</td>
+		  </tr>
+		  <tr>
+			<td id="td7">#3</td>
+			<td id="td8">-</td>
+			<td id="td9">-</td>
+		  </tr>
+		  <tr>
+			<td id="td10">#4</td>
+			<td id="td11">-</td>
+			<td id="td12">-</td>
+		  </tr>
+		  <tr>
+			<td id="td13">#5</td>
+			<td id="td14">-</td>
+			<td id="td15">-</td>
+		  </tr>
+		  <tr>
+			<td id="td16">#6</td>
+			<td id="td17">-</td>
+			<td id="td18">-</td>
+		  </tr>
+		  <tr>
+			<td id="td19">#7</td>
+			<td id="td20">-</td>
+			<td id="td21">-</td>
+		  </tr>
+		  <tr>
+			<td id="td22">#8</td>
+			<td id="td23">-</td>
+			<td id="td24">-</td>
+		  </tr>
+		  <tr>
+			<td id="td25">#9</td>
+			<td id="td26">-</td>
+			<td id="td27">-</td>
+		  </tr>
+		  <tr>
+			<td id="td28">#10</td>
+			<td id="td29">-</td>
+			<td id="td30">-</td>
+		  </tr>
+		  <tr>
+			<td id="td31">#11</td>
+			<td id="td32">-</td>
+			<td id="td33">-</td>
+		  </tr>
+		  <tr>
+			<td id="td34">#12</td>
+			<td id="td35">-</td>
+			<td id="td36">-</td>
+		  </tr>
+		  <tr>
+			<td id="td37">#13</td>
+			<td id="td38">-</td>
+			<td id="td39">-</td>
+		  </tr>
+		  <tr>
+			<td id="td40">#14</td>
+			<td id="td41">-</td>
+			<td id="td42">-</td>
+		  </tr>
+		  <tr>
+			<td id="td43">#15</td>
+			<td id="td44">-</td>
+			<td id="td45">-</td>
+		  </tr>
+		  <tr>
+			<td id="td46">#16</td>
+			<td id="td47">-</td>
+			<td id="td48">-</td>
+		  </tr>
+		  <tr>
+			<td id="td49">#17</td>
+			<td id="td50">-</td>
+			<td id="td51">-</td>
+		  </tr>
+		  <tr>
+			<td id="td52">#18</td>
+			<td id="td53">-</td>
+			<td id="td54">-</td>
+		  </tr>
+		  <tr>
+			<td id="td55">#19</td>
+			<td id="td56">-</td>
+			<td id="td57">-</td>
+		  </tr>
+		  <tr>
+			<td id="td58">#20</td>
+			<td id="td59">-</td>
+			<td id="td60">-</td>
+		  </tr>
+		</table>
+		</div>
+	</div>
+	<div id="credits">
+	<p> by boehijt, special credits to fischgrat who helped immensely, hetoord who made the original battlespotstats.com </p><p>Pokemon is © 1995-2017 Nintendo</p>
+	</div>
+	<script src="scripts/bsus.js"></script>
+</body>
+</html>

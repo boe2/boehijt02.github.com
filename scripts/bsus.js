@@ -109,10 +109,10 @@ var dict = {
 	"26-0": "Raichu",
 	"27-0": "Sandshrew",
 	"28-0": "Sandslash",
-	"29-0": "Nidoran♀",
+	"29-0": "Nidoranâ",
 	"30-0": "Nidorina",
 	"31-0": "Nidoqueen",
-	"32-0": "Nidoran♂",
+	"32-0": "Nidoranâ",
 	"33-0": "Nidorino",
 	"34-0": "Nidoking",
 	"35-0": "Clefairy",
@@ -749,7 +749,7 @@ var dict = {
 	"666-0": "Vivillon",
 	"667-0": "Litleo",
 	"668-0": "Pyroar",
-	"669-0": "Flab�b�",
+	"669-0": "Flabébé",
 	"670-0": "Floette",
 	"671-0": "Florges",
 	"672-0": "Skiddo",
@@ -927,7 +927,7 @@ function setData(number){
 		type = items[number][2];
 	}
 	pokedexNo = items[number][0].substring(0,items[number][0].length - 2);
-	document.getElementById("monsinfo2").innerHTML = "#" + pokedexNo +" - "+ items[number][1] + " - " + type + " type";
+	document.getElementById("monsinfo2").innerHTML = "#" + pokedexNo +" - "+ dict[items[number][0]] + " - " + type + " type";
 	if (tab == 0 || tab == 1 || tab == 2 || tab == 3 || tab == 4 || tab == 6){
 		for (i = 0; i < 20; i++){
 			document.getElementById("td" + (3 * (i+1) - 1).toString()).innerHTML = items[number][tabnum + 2*i];

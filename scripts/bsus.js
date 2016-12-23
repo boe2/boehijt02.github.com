@@ -900,7 +900,7 @@ if (value == "competition4102"){
 
 var mon = 0;
 var tab = 0;
-var tabnum = 4;
+var tabnum = 44;
 
 function createButtons(){
 	
@@ -978,13 +978,13 @@ function setData(number){
 		}
 	}
 	
-	if (tab == 0){
+	if (tab == 1){
 		if (document.getElementById("td1").innerHTML == ""){
 			document.getElementById("noitems").innerHTML = "Held item data for this Pokemon is unavailable, presumably because this Pokemon has not used any held items, or because the competition/ladder didn't allow the use of held items.";
 		}
 	}
 	
-	if (tab != 0){
+	if (tab != 1){
 		document.getElementById("noitems").innerHTML = "";
 	}
 	
@@ -995,12 +995,12 @@ setData(0);
 function setTab(number){
 	tab = number;
 	if (tab == 0){
-		tabnum = 4;		
-		document.getElementById("tabnamespan").innerHTML = "Items";
+		tabnum = 44;		
+		document.getElementById("tabnamespan").innerHTML = "Moves";
 	}
 	if (tab == 1){
-		tabnum = 44;
-		document.getElementById("tabnamespan").innerHTML = "Moves";
+		tabnum = 4;
+		document.getElementById("tabnamespan").innerHTML = "Items";
 	}
 	if (tab == 2){
 		tabnum = 84;
@@ -1034,8 +1034,8 @@ function setTab(number){
 }
 
 function resetData(number){	
-	for (i = 0; i < items.length; i++){		
-		document.getElementById("button" + i).remove();
+	for (i = 0; i < items.length; i++){
+        document.getElementById("button" + i).outerHTML='';
 	}
 	var value = select.options[select.selectedIndex].value;
 	

@@ -1,14 +1,16 @@
 var items;
+var totalusage;
 
 select = document.getElementById("select");
 var value = select.options[select.selectedIndex].value;
 	
 	if (value == "competition4101"){	
 		items = competition4101;
+		totalusage = competition4101_totalusage;
 	}
-	
 	if (value == "competition4102"){	
 		items = competition4102;
+		totalusage = competition4102_totalusage;
 	}
 
 var mon = 0;
@@ -39,13 +41,18 @@ function setData(number){
 		type = items[number][2];
 	}
 	pokedexNo = items[number][0].substring(0,items[number][0].length - 2);
-	document.getElementById("monsinfo2").innerHTML = "#" + pokedexNo +" - "+ dict[items[number][0]] + " - " + type + " type";
+	document.getElementById("monsinfo2").innerHTML = "#" + pokedexNo +" - "+ dict[items[number][0]] + " - " + type + " type" + " - Estimated usage: " + Math.round(items[number][items[number].length-1]/totalusage*60000)/100 + "%";
 	if (tab == 0 || tab == 1 || tab == 2 || tab == 3 || tab == 4 || tab == 6){
-		for (i = 0; i < 20; i++){
+		var totalperc = 0;
+		var stop = 20;
+		for (i = 0; i < stop; i++){
 			document.getElementById("td" + (3 * (i+1) - 1).toString()).innerHTML = items[number][tabnum + 2*i];
+			totalperc += parseFloat(items[number][tabnum + 1 + 2*i]);
 			document.getElementById("td" + (3 * (i+1)).toString()).innerHTML = items[number][tabnum + 1 + 2*i] + "%";
 		}
+
 	}
+	
 	if (tab == 5 || tab == 7 || tab == 8){
 		for (i = 0; i < 20; i++){
 			var id = items[number][tabnum + i];
@@ -88,12 +95,39 @@ function setData(number){
 	if (tab == 1){
 		if (document.getElementById("td1").innerHTML == ""){
 			document.getElementById("noitems").innerHTML = "Held item data for this Pokemon is unavailable, presumably because this Pokemon has not used any held items, or because the competition/ladder didn't allow the use of held items.";
+			
+			document.getElementById("td62").innerHTML = "";
+			document.getElementById("td63").innerHTML = "";
 		}
 	}
 	
 	if (tab != 1){
 		document.getElementById("noitems").innerHTML = "";
-	}	
+	}
+	
+	var total = 400;
+	if (tab == 4 || tab == 3){
+		total = 100;
+	}
+	
+	var other = total - totalperc;
+	if (tab == 2 || tab == 6){
+		other = 0;
+	}		
+	
+	document.getElementById("td62").innerHTML = "Other";
+	document.getElementById("td63").innerHTML = other + "%";
+	
+	if ((document.getElementById("td59").innerHTML == "")){
+		document.getElementById("td62").innerHTML = "";
+		document.getElementById("td63").innerHTML = "";		
+	}
+	
+	
+	if (tab == 2 || tab == 5 || tab == 7 || tab == 8){
+		document.getElementById("td62").innerHTML = "";
+		document.getElementById("td63").innerHTML = "";
+	}
 	
 }
 
@@ -148,9 +182,11 @@ function resetData(number){
 
 	if (value == "competition4101"){	
 		items = competition4101;
-	}	
+		totalusage = competition4101_totalusage;
+	}
 	if (value == "competition4102"){	
 		items = competition4102;
+		totalusage = competition4102_totalusage;
 	}
 	mon = 0;
 	setTab(0);

@@ -1,3 +1,9 @@
+:root {
+  --header-color: #498FAC;
+  --main-box-color: #D9F4EE;
+  --button-color: #A2D8D1; 
+}
+
 body {
 	overflow-x: hidden;
 	font-family: sans-serif;
@@ -18,15 +24,15 @@ body {
     top: 0px;
     left: 0px;
 	right: 0px;
-    background-color: #CCCCFF;
-    color: black;
+    background-color: var(--header-color);
+    color: white;
     text-align: center;
     height: 62px;
     line-height: 50px;
 	margin: auto;
 	padding: 0px;
 	border: 8px solid white;
-    border-radius: 20px;
+    border-radius: 0px;
 }
 
 #headertext {	
@@ -37,18 +43,18 @@ body {
 }
 
 #info {
-	background-color: #EEEEFF;
+	background-color: var(--main-box-color);
 	position: absolute;
 	top: 69px;
 	height: 70px;
 	left:0px;
 	right: 0px;
 	border: 8px solid white;
-    border-radius: 20px;
+    border-radius: 0px;
 }
 
 #left {
-	background-color: #EEEEFF;
+	background-color: var(--main-box-color);
 	position: absolute;
 	overflow-y: auto;
 	width: 231px;
@@ -56,12 +62,12 @@ body {
 	bottom: 0px;
 	left: 0px;
 	border: 8px solid white;
-    border-radius: 20px;
+    border-radius: 0px;
 	
 }
 
 #right {
-	background-color: #EEEEFF;
+	background-color: var(--main-box-color);
 	position: absolute;
 	overflow-y: auto;
 	left: 246px;
@@ -69,30 +75,30 @@ body {
 	bottom: 0px;
 	right: 0px;
 	border: 8px solid white;
-    border-radius: 20px;
+    border-radius: 0px;
 	overflow-y: auto;
-overflow-x: hidden;
+	overflow-x: hidden;
 }
 
 #pokemonbyranking {	
-    background-color: #CCCCFF;
+    background-color: var(--button-color);
     color: black;
     margin-bottom: 6px;
     margin-top: 4px;	
     margin-left: 2px;
-	border: 2px solid #CCCCFF;
+	border: 2px solid var(--button-color);
 	border-left-width: 2px;
 	border-right-width: 2px;
 	border-top-width: 4px;
 	border-bottom-width: 4px;
-    border-radius: 2px;
+    border-radius: 0px;
 	width: 194px;
 }
 #border {	
     margin-bottom: 6px;
     margin-top: 4px;	
     margin-left: 4px;
-	border: 1px solid #CCCCFF;
+	border: 1px solid var(--button-color);
 	border-left-width: 0px;
 	border-right-width: 0px;
 	border-top-width: 0px;
@@ -118,54 +124,73 @@ overflow-x: hidden;
 }
 
 #tabs{
-    background-color: #CCCCFF;
+    background-color: var(--button-color);
     color: black;
     margin-bottom: 6px;
     margin-top: 4px;	
     margin-left: 2px;
-	border: 2px solid #CCCCFF;
+	border: 2px solid var(--button-color);
 	border-left-width: 5px;
 	border-right-width: 2px;
 	border-top-width: 4px;
 	border-bottom-width: 4px;
-    border-radius: 2px;
+    border-radius: 0px;
 	left: 0px;
 	right: 0px;
 	width: 100%;
 }
 
-#credits {
+.about {
 	position: absolute;
-	top: 92%;
-	width: 98%;
+    top: 83px;
+    right: 24px;
 	text-align: right;
-	font-size: 12px;
-	visibility: hidden;
+    border-bottom: 1px dotted black;
+}
+
+.about .credits {
+    visibility: hidden;
+    width: 450px;
+    background-color: var(--header-color);
+	color: white;
+    text-align: center;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: -850%;
+    left: -230%;
+    margin-left: -60px;
+	font-size: 13px;
+}
+
+.about:hover .credits {
+    visibility: visible;
+    opacity: 0.9;
 }
 
 #tabnamespan {
 	margin-left: 3px;
-	background-color: #CCCCFF; 
+	background-color: var(--button-color);
     padding: 4px 20px;
     border: none;
     color: black;
 	font-family: sans-serif;
 	font-size: 17px;	
-    border-radius: 2px;
+    border-radius: 0px;
 }
 
-button {
-	background-color: #CCCCFF; 
+.coloredbutton {
+	background-color: var(--button-color);
     padding: 0px 20px;
     border: none;
     color: black;
 	font-family: sans-serif;
 	font-size: 17px;	
-    border-radius: 2px;
+    border-radius: 0px;
 }
 
 .button{
-	border: 1px solid #CCCCFF;
+	border: 1px solid var(--button-color);
 	border-left-width: 0px;
 	border-right-width: 0px;
 	border-top-width: 0px;
@@ -175,33 +200,33 @@ button {
 }
 
 .button:hover { 
-	background-color: #CCCCFF;
+	background-color: var(--button-color);
     margin-bottom: 5px;
     margin-top: 4px;	
     margin-left: 2px;
-	border: 2px solid #CCCCFF;
+	border: 2px solid var(--button-color);
 	border-left-width: 2px;
 	border-right-width: 2px;
 	border-top-width: 0px;	
 	border-bottom-width: 0px;
-    border-radius: 2px;
+    border-radius: 0px;
 }
 
 .clickedbutton {
-	background-color: #CCCCFF;
+	background-color: var(--button-color);
     margin-bottom: 5px;
     margin-top: 4px;	
     margin-left: 2px;
-	border: 2px solid #CCCCFF;
+	border: 2px solid var(--button-color);
 	border-left-width: 2px;
 	border-right-width: 2px;
 	border-top-width: 0px;	
 	border-bottom-width: 0px;
-    border-radius: 2px;
+    border-radius: 0px;
 }
 
 .tab{
-	border: 1px solid #CCCCFF;
+	border: 1px solid var(--button-color);
 	border-bottom-width: 0px;
 	border-right-width: 0px;
 	border-top-width: 0px;
@@ -214,7 +239,7 @@ button {
 }
 
 .tab:hover { 
-	background-color: #CCCCFF;
+	background-color: var(--button-color);
 }
 
 select option:disabled {

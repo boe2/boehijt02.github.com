@@ -75,12 +75,12 @@ body {
 }
 
 #pokemonbyranking {	
-    background-color: #A2D8D1; 
-    color: black;
+    background-color: #498FAC; 
+    color: white;
     margin-bottom: 6px;
     margin-top: 4px;	
     margin-left: 2px;
-	border: 2px solid #A2D8D1; 
+	border: 2px solid #498FAC; 
 	border-left-width: 2px;
 	border-right-width: 2px;
 	border-top-width: 4px;
@@ -192,6 +192,16 @@ body {
     border-radius: 0px;
 }
 
+.coloredclickedbutton {
+	background-color: #498FAC; 
+    padding: 0px 20px;
+    border: none;
+    color: white;
+	font-family: sans-serif;
+	font-size: 17px;	
+    border-radius: 0px;
+}
+
 .button{
 	border: 1px solid #A2D8D1; 
 	border-left-width: 0px;
@@ -220,6 +230,7 @@ body {
     margin-bottom: 5px;
     margin-top: 4px;	
     margin-left: 2px;
+	color: black;
 	border: 2px solid #A2D8D1; 
 	border-left-width: 2px;
 	border-right-width: 2px;

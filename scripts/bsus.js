@@ -13,7 +13,7 @@ var value = select.options[select.selectedIndex].value;
 		totalusage = competition4102_totalusage;
 	}
 
-var mon = 0;
+var mon;
 var tab = 0;
 var tabnum = 44;
 
@@ -22,14 +22,17 @@ function createButtons(){
 	for (i = 0; i < items.length; i++){		
 		var div = document.createElement("div");
 		div.textContent = "#" + (1 + i) + " - " + dict[items[i][0]];
-		div.setAttribute("class", "button");
-		div.setAttribute("onClick", "setData(" + i + ")");		
+		if (i == mon){
+			div.setAttribute("class", "clickedbutton");	
+		}else{
+			div.setAttribute("class", "button");	
+		}
+		div.setAttribute("onClick", "resetData(" + i + ")");		
 		div.setAttribute("id", "button" + i);
 		document.getElementById("buttonlist").appendChild(div);
 	}
 }
 
-createButtons();
 
 function setData(number){	
 	
@@ -128,49 +131,69 @@ function setData(number){
 		document.getElementById("td62").innerHTML = "";
 		document.getElementById("td63").innerHTML = "";
 	}
+
 	
 }
 
-setData(0);
-
 function setTab(number){
 	tab = number;
+	
+	document.getElementById("tabbutton0").className = "coloredbutton";
+	document.getElementById("tabbutton1").className = "coloredbutton";
+	document.getElementById("tabbutton2").className = "coloredbutton";
+	document.getElementById("tabbutton3").className = "coloredbutton";
+	document.getElementById("tabbutton4").className = "coloredbutton";
+	document.getElementById("tabbutton5").className = "coloredbutton";
+	document.getElementById("tabbutton6").className = "coloredbutton";
+	document.getElementById("tabbutton7").className = "coloredbutton";
+	document.getElementById("tabbutton8").className = "coloredbutton";
+	
 	if (tab == 0){
 		tabnum = 44;		
 		document.getElementById("tabnamespan").innerHTML = "Moves";
+		document.getElementById("tabbutton0").className = "coloredclickedbutton";
 	}
 	if (tab == 1){
 		tabnum = 4;
 		document.getElementById("tabnamespan").innerHTML = "Items";
+		document.getElementById("tabbutton1").className = "coloredclickedbutton";
 	}
 	if (tab == 2){
 		tabnum = 84;
 		document.getElementById("tabnamespan").innerHTML = "Abilities";
+		document.getElementById("tabbutton2").className = "coloredclickedbutton";
 	}
 	if (tab == 3){
 		tabnum = 90;
 		document.getElementById("tabnamespan").innerHTML = "Natures";
+		document.getElementById("tabbutton3").className = "coloredclickedbutton";
 	}	
 	if (tab == 4){
 		tabnum = 130;
 		document.getElementById("tabnamespan").innerHTML = "Moves when victorious";
+		document.getElementById("tabbutton4").className = "coloredclickedbutton";
 	}	
 	if (tab == 5){
 		tabnum = 170;
 		document.getElementById("tabnamespan").innerHTML = "Opponents when victorious";
+		document.getElementById("tabbutton5").className = "coloredclickedbutton";
 	}
 	if (tab == 6){
 		tabnum = 190;
 		document.getElementById("tabnamespan").innerHTML = "Moves when defeated";
+		document.getElementById("tabbutton6").className = "coloredclickedbutton";
 	}
 	if (tab == 7){
 		tabnum = 230;
 		document.getElementById("tabnamespan").innerHTML = "Opponents when defeated";
+		document.getElementById("tabbutton7").className = "coloredclickedbutton";
 	}
 	if (tab == 8){
 		tabnum = 250;
 		document.getElementById("tabnamespan").innerHTML = "Teammates";
+		document.getElementById("tabbutton8").className = "coloredclickedbutton";
 	}
+		
 	setData(mon);
 }
 
@@ -188,8 +211,11 @@ function resetData(number){
 		items = competition4102;
 		totalusage = competition4102_totalusage;
 	}
-	mon = 0;
+	mon = number;
 	setTab(0);
 	createButtons();
+	setData(mon);
 	
 }
+
+resetData(0);

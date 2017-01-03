@@ -4,11 +4,11 @@
       <title>Battle Spot Usage Stats</title>
       <meta charset="utf-8">
       <link href="css/bsus.css" rel="stylesheet">
-      <link rel="icon" type="image/png" href="images/swabluicon.png">
+	  <link rel="icon" type="image/png" href="images/swabluicon.png">
    </head>
    <body>
       <div id="header">
-         <h2 id="headertext">Battle Spot Usage Stats</h2>
+         <h2 id="headertext"> Battle Spot Usage Stats</h2>
       </div>
       <div id="info">
          <div id="selectandbutton">
@@ -43,15 +43,15 @@
       <div id="right">
          <div id="rightcontent">
             <div id="tabs"><span id="tabsspan">
-               <button type="button" class="coloredbutton" onclick="setTab(0)">Moves</button> |
-               <button type="button" class="coloredbutton" onclick="setTab(1)">Items</button> |
-               <button type="button" class="coloredbutton" onclick="setTab(2)">Abilties</button> |
-               <button type="button" class="coloredbutton" onclick="setTab(3)">Natures</button>	 |	
-               <button type="button" class="coloredbutton" onclick="setTab(4)">Moves when victorious</button>	 |	
-               <button type="button" class="coloredbutton" onclick="setTab(5)">Opponents when victorious</button> |
-               <button type="button" class="coloredbutton" onclick="setTab(6)">Moves when defeated</button> |
-               <button type="button" class="coloredbutton" onclick="setTab(7)">Opponents when defeated</button> |
-               <button type="button" class="coloredbutton" onclick="setTab(8)">Teammates</button></span>
+               <button type="button" id="tabbutton0" class="coloredbutton" onclick="setTab(0)">Moves</button> |
+               <button type="button" id="tabbutton1" class="coloredbutton" onclick="setTab(1)">Items</button> |
+               <button type="button" id="tabbutton2" class="coloredbutton" onclick="setTab(2)">Abilities</button> |
+               <button type="button" id="tabbutton3" class="coloredbutton" onclick="setTab(3)">Natures</button>	 |	
+               <button type="button" id="tabbutton4" class="coloredbutton" onclick="setTab(4)">Moves when victorious</button>	 |	
+               <button type="button" id="tabbutton5" class="coloredbutton" onclick="setTab(5)">Opponents when victorious</button> |
+               <button type="button" id="tabbutton6" class="coloredbutton" onclick="setTab(6)">Moves when defeated</button> |
+               <button type="button" id="tabbutton7" class="coloredbutton" onclick="setTab(7)">Opponents when defeated</button> |
+               <button type="button" id="tabbutton8" class="coloredbutton" onclick="setTab(8)">Teammates</button></span>
             </div>
             <div id="monsinfo">
                <p id="monsinfo2">info</p>
@@ -168,7 +168,7 @@
          </div>
       </div>
       <div class="about">about this page
-         <span class="credits"> by <b> boehijt </b> <br><br> a page to view full usage stats for the Battle Spot ladders and competitions in Pokemon Sun and Moon<br> usage stats have been gathered from the Pokemon Global Link<br><br> special credits to <b> Fischgrat </b>and <b>Alpha Ninja</b> who helped out a lot and <b>hetoord </b> who made the original battlespotstats.com <br> <br> <b>Pokemon</b> is © 1995-2017 <b> Nintendo</b></span>
+         <span class="credits"> <img id="leftswablu" src="images/swabluicon.png">by <b> boehijt</b><img id="rightswablu" src="images/swabluicon.png"><br><br> a page to view full usage stats for the Battle Spot ladders and competitions in Pokemon Sun and Moon<br> usage stats have been gathered from the Pokemon Global Link<br><br> special credits to <b> Fischgrat </b>and <b>Alpha Ninja</b> who helped out a lot and <b>hetoord </b> who made the original battlespotstats.com <br> <br> <b>Pokemon</b> is © 1995-2017 <b> Nintendo</b></span>
       </div>
       <script src="scripts/data.js"></script>
       <script src="scripts/bsus.js"></script>

@@ -36,6 +36,18 @@ body {
 	width: 100%;
 }
 
+#swablu1 {	
+    position: relative;
+    top: 6px;
+	left: -10px;
+}
+
+#swablu2 {	
+    position: relative;
+    top: 6px;
+	left: 10px;
+}
+
 #info {
 	background-color: #D9F4EE;
 	position: absolute;
@@ -80,14 +92,17 @@ body {
     margin-bottom: 6px;
     margin-top: 4px;	
     margin-left: 2px;
-	border: 2px solid #498FAC; 
-	border-left-width: 2px;
-	border-right-width: 2px;
+	border: 2px solid #A2D8D1; 
+	border-left-width: 6px;
+	border-right-width: 6px;
 	border-top-width: 4px;
 	border-bottom-width: 4px;
     border-radius: 0px;
 	width: 194px;
+	height: 22px;
+	text-align: center;
 }
+
 #border {	
     margin-bottom: 6px;
     margin-top: 4px;	
@@ -151,8 +166,8 @@ body {
     padding: 5px;
     position: absolute;
     z-index: 1;
-    bottom: -850%;
-    left: -230%;
+    bottom: -1190%;
+    left: -247%;
     margin-left: -60px;
 	font-size: 13px;
 }

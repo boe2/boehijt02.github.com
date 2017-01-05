@@ -6,9 +6,10 @@ body {
 }
 #selectandbutton {
     position: absolute;
-    top: -11px;
+    top: 4px;
     left: 4px;
 }
+
 #header {
     position: absolute;
     top: 0px;
@@ -75,8 +76,8 @@ body {
     overflow-x: hidden;
 }
 #pokemonbyranking {
-    background-color: #498FAC;
-    color: white;
+    background-color: #A2D8D1;
+    color: black;
     margin-bottom: 6px;
     margin-top: 4px;
     margin-left: 2px;
@@ -112,7 +113,7 @@ body {
     left: 10px;
     top: 10px;
 }
-#monsinfo {} #table {} #tabs {
+#tabs {
     background-color: #A2D8D1;
     color: black;
     margin-bottom: 6px;

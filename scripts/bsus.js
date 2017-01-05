@@ -4,14 +4,7 @@ var totalusage;
 select = document.getElementById("select");
 var value = select.options[select.selectedIndex].value;
 
-if (value == "competition4101") {
-    items = competition4101;
-    totalusage = competition4101_totalusage;
-}
-if (value == "competition4102") {
-    items = competition4102;
-    totalusage = competition4102_totalusage;
-}
+setTotalUsage(value);
 
 var mon;
 var tab = 0;
@@ -207,14 +200,7 @@ function resetData(number, resetsearch) {
 
     var value = select.options[select.selectedIndex].value;
 
-    if (value == "competition4101") {
-        items = competition4101;
-        totalusage = competition4101_totalusage;
-    }
-    if (value == "competition4102") {
-        items = competition4102;
-        totalusage = competition4102_totalusage;
-    }
+	setTotalUsage(value);
     mon = number;
     setTab(0);
     createButtons();
@@ -244,7 +230,14 @@ function updateSearch(){
 		}
 		if ((i+1).toString().includes(value)){
 			include = true;
-		}				
+		}		
+
+		for (var alias in aliases){
+			if (alias.includes(value) && pokeid == aliases[alias]){
+				include = true;
+			}			
+		}			
+		
 		if (include == false){
 			document.getElementById("button" + i.toString()).style.display = "none";			
 		}
@@ -252,6 +245,21 @@ function updateSearch(){
 			document.getElementById("button" + i.toString()).style.display = "block";			
 		}		
 	}	
+}
+
+function setTotalUsage(value){
+	var formatinfo = "";
+	if (value == "competition4101") {
+        items = competition4101;
+        totalusage = competition4101_totalusage;
+		formatinfo = "Battle of Alola - Junior Division - <a target=\"blank\" href=\"https://3ds.pokemon-gl.com/competitions/4101/\"> info about this competition </a>";
+    }
+    if (value == "competition4102") {
+        items = competition4102;
+        totalusage = competition4102_totalusage;
+		formatinfo = "Battle of Alola - Masters Division - <a target=\"blank\" href=\"https://3ds.pokemon-gl.com/competitions/4102/\"> info about this competition </a>";
+    }
+	document.getElementById("formatinfo").innerHTML = "Selected format: " + formatinfo;
 }
 
 resetData(0);

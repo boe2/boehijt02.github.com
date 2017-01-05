@@ -13,8 +13,7 @@
         <h2 id="headertext"> Battle Spot Usage Stats </h2>
     </div>
     <div id="info">
-        <div id="selectandbutton">
-            <p>Select format:</p>
+        <div id="selectandbutton"><label id="selectformat">Select format:</label>
             <select id="select">
                <option disabled value="#">
                   Season 1 - Not available yet!
@@ -30,6 +29,7 @@
                </option>
             </select>
             <button onclick="resetData(0, true)" type="button2">Show stats!</button>
+			<p id="formatinfo"> Selected format:  </p>
         </div>
     </div>
     <div id="left">
@@ -178,7 +178,10 @@
     <div class="about">about this page
         <span class="credits"> <img id="leftswablu" src="images/swabluicon.png">by <b> boehijt</b><img id="rightswablu" src="images/swabluicon.png"><br><br> a page to view full usage stats for the Battle Spot ladders and competitions in Pokemon Sun and Moon<br> usage stats have been gathered from the Pokemon Global Link<br><br> special credits to <b> Fischgrat </b>and <b>Alpha Ninja</b> who helped out a lot and <b>hetoord </b> who made the original battlespotstats.com <br> <br> for questions, errors, or anything else, please contact me at boehijt@gmail.com or send me a message on Smogon or Pokemon Showdown!<br> <br> <b>Pokemon</b> is © 1995-2017 <b> Nintendo</b></span>
     </div>
-    <script src="scripts/data.js"></script>
+    <script src="scripts/dict.js"></script>
+    <script src="scripts/aliases.js"></script>
+    <script src="scripts/competition4101.js"></script>
+    <script src="scripts/competition4102.js"></script>
     <script src="scripts/bsus.js"></script>
 </body>
 

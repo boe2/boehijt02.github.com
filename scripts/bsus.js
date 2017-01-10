@@ -12,18 +12,34 @@ var tabnum = 44;
 
 function createButtons() {
 
-    for (i = 0; i < items.length; i++) {
-        var div = document.createElement("div");
-        div.textContent = "#" + (1 + i) + " - " + dict[items[i][0]];
-        if (i == mon) {
-            div.setAttribute("class", "clickedbutton");
-        } else {
-            div.setAttribute("class", "button");
-        }
-        div.setAttribute("onClick", "resetData(" + i + "), false");
-        div.setAttribute("id", "button" + i);
-        document.getElementById("buttonlist").appendChild(div);
-    }
+	for (i = 0; i < items.length; i++) {
+		
+		var dontadd = false;
+		
+		var div = document.createElement("div");
+		
+		var name = "";
+		
+		try {
+			name = dict[items[i][0]];	
+		}catch(err){
+			dontadd = true;
+		}
+		
+		div.textContent = "#" + (1 + i) + " - " + name;
+		
+		if (i == mon) {
+			div.setAttribute("class", "clickedbutton");
+		} else {
+			div.setAttribute("class", "button");
+		}
+		div.setAttribute("onClick", "resetData(" + i + "), false");
+		div.setAttribute("id", "button" + i);
+		if (dontadd == false){
+			document.getElementById("buttonlist").appendChild(div);
+			
+		}
+	}
 }
 
 
@@ -213,38 +229,48 @@ function updateSearch(){
 	
 	var value = document.getElementById("searchbox").value;
 	
-	for (var i = 0; i < items.length; i++){
-		pokename = dict[items[i][0]];
-		pokeid = items[i][0];
-		
-		valueLowerCase = value.toLowerCase();
-		pokenameLowerCase = pokename.toLowerCase();
-		
-		var include = false;
-		
-		if (pokenameLowerCase.includes(valueLowerCase)){
-			include = true;
-		}
-		if (pokeid.includes(value)){
-			include = true;
-		}
-		if ((i+1).toString().includes(value)){
-			include = true;
-		}		
+		if(items[i] != undefined){
+			
+			for (var i = 0; i < items.length; i++){
+				pokename = dict[items[i][0]];
+				pokeid = items[i][0];
+				
+				if (pokename == undefined){			
+					document.getElementById("button" + i.toString()).style.display = "none";	
+				}else{		
+					valueLowerCase = value.toLowerCase();
+					pokenameLowerCase = pokename.toLowerCase();
+				}
+				
+				var include = false;
+				
+				if (pokenameLowerCase.includes(valueLowerCase)){
+					include = true;
+				}
+				if (pokeid.includes(value)){
+					include = true;
+				}
+				if ((i+1).toString().includes(value)){
+					include = true;
+				}		
 
-		for (var alias in aliases){
-			if (alias.includes(value) && pokeid == aliases[alias]){
-				include = true;
-			}			
-		}			
-		
-		if (include == false){
-			document.getElementById("button" + i.toString()).style.display = "none";			
-		}
-		if (include == true){
-			document.getElementById("button" + i.toString()).style.display = "block";			
-		}		
-	}	
+				for (var alias in aliases){
+					if (alias.includes(value) && pokeid == aliases[alias]){
+						include = true;
+					}			
+				}			
+				
+				if (include == false){
+					document.getElementById("button" + i.toString()).style.display = "none";			
+				}
+				if (include == true){
+					document.getElementById("button" + i.toString()).style.display = "block";			
+				}
+				
+			}
+	}
+	
+	
 }
 
 function setTotalUsage(value){
@@ -258,6 +284,26 @@ function setTotalUsage(value){
         items = competition4102;
         totalusage = competition4102_totalusage;
 		formatinfo = "Battle of Alola - Masters Division - <a target=\"blank\" href=\"https://3ds.pokemon-gl.com/competitions/4102/\"> info about this competition </a>";
+    }
+    if (value == "oras_117_1") {
+        items = oras_117_1;
+        totalusage = oras_117_1_totalusage;
+		formatinfo = "ORAS Season 17 - Singles";
+    }
+    if (value == "oras_117_2") {
+        items = oras_117_2;
+        totalusage = oras_117_2_totalusage;
+		formatinfo = "ORAS Season 17 - Doubles";
+    }
+    if (value == "oras_117_3") {
+        items = oras_117_3;
+        totalusage = oras_117_3_totalusage;
+		formatinfo = "ORAS Season 17 - Triples";
+    }
+    if (value == "oras_117_4") {
+        items = oras_117_4;
+        totalusage = oras_117_4_totalusage;
+		formatinfo = "ORAS Season 17 - Rotations";
     }
 	document.getElementById("formatinfo").innerHTML = "Selected format: " + formatinfo;
 }

@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Battle Spot Usage Stats (beta)</title>
+    <title>Battle Spot Usage Stats</title>
     <meta charset="utf-8">
     <link href="css/bsus.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="images/swabluicon.png">
@@ -16,6 +16,9 @@
         <div id="selectandbutton"><label id="selectformat">Select format:</label>
             <select id="select">
                <option disabled value="#">
+                  Gen 7
+               </option>
+               <option disabled value="#">
                   Season 1 - Not available yet!
                </option>
                <option disabled value="#">
@@ -26,6 +29,21 @@
                </option>
                <option value="competition4102" selected="selected">
                   Battle of Alola - Masters Division
+               </option>			   
+               <option disabled value="#">
+                  Gen 6 Ladders
+               </option>
+               <option value="oras_117_1">
+                  ORAS Season 17 - Singles
+               </option>
+               <option value="oras_117_2">
+                  ORAS Season 17 - Doubles
+               </option>
+               <option value="oras_117_3">
+                  ORAS Season 17 - Triples
+               </option>
+               <option value="oras_117_4">
+                  ORAS Season 17 - Rotations
                </option>
             </select>
             <button onclick="resetData(0, true)" type="button2">Show stats!</button>
@@ -176,12 +194,16 @@
         </div>
     </div>
     <div class="about">about this page
-        <span class="credits"> <img id="leftswablu" src="images/swabluicon.png">by <b> boe </b><img id="rightswablu" src="images/swabluicon.png"><br><br> a page to view full usage stats for the Battle Spot ladders and competitions in Pokemon Sun and Moon<br> usage stats have been gathered from the Pokemon Global Link<br><br> special credits to <b> Fischgrat </b>and <b>Alpha Ninja</b> who helped out a lot and <b>hetoord </b> who made the original battlespotstats.com <br> <br> for questions, errors, or anything else, please contact me at boehijt@gmail.com or send me a message on Smogon or Pokemon Showdown!<br> <br> <b>Pokemon</b> is © 1995-2017 <b> Nintendo</b></span>
+        <span class="credits"> <img id="leftswablu" src="images/swabluicon.png">by <b> boe</b><img id="rightswablu" src="images/swabluicon.png"><br><br> a page to view full usage stats for the Battle Spot ladders and competitions in Pokemon Sun and Moon<br> usage stats have been gathered from the Pokemon Global Link<br><br> special credits to <b> Fischgrat </b>and <b>Alpha Ninja</b> who helped out a lot and <b>hetoord </b> who made the original battlespotstats.com <br> <br> for questions, errors, or anything else, please contact me at boehijt@gmail.com or send me a message on Smogon or Pokemon Showdown! <br> <br> <b>Pokemon</b> is © 1995-2017 <b> Nintendo</b></span>
     </div>
     <script src="data/dict.js"></script>
     <script src="data/aliases.js"></script>
     <script src="data/competition4101.js"></script>
     <script src="data/competition4102.js"></script>
+    <script src="data/117_1.js"></script>
+    <script src="data/117_2.js"></script>
+    <script src="data/117_3.js"></script>	
+    <script src="data/117_4.js"></script>
     <script src="scripts/bsus.js"></script>
 </body>
 
